@@ -1,3 +1,7 @@
+package ServiceGroup;
+
+import ServiceGroup.Dependencies;
+
 /**
  * Created by manula on 11/7/14.
  */
