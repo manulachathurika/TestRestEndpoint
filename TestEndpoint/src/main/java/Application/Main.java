@@ -12,7 +12,7 @@ public class Main {
         String applicationID = "test_app_3";
 
         String JSON_String = "{  \n" +
-                "   \"applications\":[  \n" +
+                "   \"applications\":  \n" +
                 "      {  \n" +
                 "         \"groups\":{  \n" +
                 "            \"alias\":\"mygroup3\",\n" +
@@ -70,27 +70,30 @@ public class Main {
                 "         \"tenantAdminUsername\":\"admin\",\n" +
                 "         \"tenantDomain\":\"carbon.super\"\n" +
                 "      }\n" +
-                "   ]\n" +
                 "}";
 
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         ApplicationBean list  = (ApplicationBean)gson.fromJson(JSON_String, ApplicationBean.class);
 
-        if ((list == null) || (list.getApplications() == null)) {
-            System.out.println("Application not found: " + applicationID);
-            return;
+        if (list != null) {
+            System.out.println(getGson().toJson(list.getApplications()));
         }
 
-        for (Applications application : list.getApplications()) {
-            if (application.getId().equals(applicationID)) {
-                System.out.println(getGson().toJson(application));
-            }
-        }
+//        if ((list == null) || (list.getApplications() == null)) {
+//            System.out.println("Application not found: " + applicationID);
+//            return;
+//        }
+//
+//        for (Applications application : list.getApplications()) {
+//            if (application.getId().equals(applicationID)) {
+//                System.out.println(getGson().toJson(application));
+//            }
+//        }
     }
 
-    public static Gson getGson() {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        return gsonBuilder.create();
-    }
+        public static Gson getGson() {
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            return gsonBuilder.create();
+        }
 }

@@ -5,14 +5,14 @@ package Application;
  */
 public class ApplicationBean
 {
-    private Applications[] applications;
+    private Applications applications;
 
-    public Applications[] getApplications ()
+    public Applications getApplications ()
     {
         return applications;
     }
 
-    public void setApplications (Applications[] applications)
+    public void setApplications (Applications applications)
     {
         this.applications = applications;
     }

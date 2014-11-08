@@ -3,17 +3,15 @@ package ServiceGroup;
 import java.util.ArrayList;
 
 public class ServiceGroupList {
-    private ArrayList<ServiceGroupDefinition> serviceGroupDefinition;
+    private ServiceGroupDefinition serviceGroupDefinition;
 
-    public ArrayList<ServiceGroupDefinition> getServiceGroup() {
+    public ServiceGroupDefinition getServiceGroupDefinition ()
+    {
         return serviceGroupDefinition;
     }
 
-    public void setServiceGroup(ArrayList<ServiceGroupDefinition> serviceGroup) {
-        this.serviceGroupDefinition = serviceGroup;
-    }
-
-    ServiceGroupList () {
-        serviceGroupDefinition = new ArrayList<ServiceGroupDefinition>();
+    public void setServiceGroupDefinition (ServiceGroupDefinition serviceGroupDefinition)
+    {
+        this.serviceGroupDefinition = serviceGroupDefinition;
     }
 }
